@@ -5,4 +5,20 @@
 <body>
 Holy Mass
 </body>
+<script>
+document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        }
+
+    function onSuccess(position) {
+            var lat = pos.coords.latitude;
+            var lng = pos.coords.longitude;
+            alert("lat : " + lat + " lng : " + lng);
+
+        }
+
+    function onError(error) {
+            alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+</script>
 </html>
