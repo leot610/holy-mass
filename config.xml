@@ -12,4 +12,5 @@
   <author href="http://www.techlaps.com" email="info@techlaps.com">
       Techlaps
   </author>
+  <preference name="fullscreen"                 value="true" />
 </widget>
