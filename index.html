@@ -10,15 +10,7 @@ Holy Mass
 <script>
 document.addEventListener("deviceready", appReady, false);
 function appReady(){
-    navigator.geolocation.getCurrentPosition(disp);
+    alert("Success!!!")
 }   
-
-function disp(pos) {
-
-   $('.lat-view').html(pos.coords.latitude);
-
-   $('.long-view').html(pos.coords.longitude);
-
-}
 </script>
 </html>
