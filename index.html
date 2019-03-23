@@ -4,33 +4,21 @@
 </head>
 <body>
 Holy Mass
+<div class="lat-view"></div>
+<div class="long-view"></div>
 </body>
 <script>
 document.addEventListener("deviceready", appReady, false);
 function appReady(){
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    alert(navigator.geolocation.getCurrentPosition());
 }   
 
-// onSuccess Callback
-// This method accepts a Position object, which contains the
-// current GPS coordinates
+function disp(pos) {
 
-var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
+   $('.lat-view').html(pos.coords.latitude);
 
-// onError Callback receives a PositionError object
+   $('.long-view').html(pos.coords.longitude);
 
-function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
 }
 </script>
 </html>
